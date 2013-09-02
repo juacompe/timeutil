@@ -7,5 +7,6 @@ def get_time(time, now=None):
     delta = time - now
     hours, minutes = delta.seconds / 3600, delta.seconds % 3600 / 60
     time_from_now = "%s hours %s minutes from now" % (hours, minutes)
-    return "31 December 2013 at %s (%s)" % (time_str, time_from_now)
+    date_str = time.strftime("%d %B %Y (%Z)")
+    return "%s at %s (%s)" % (date_str, time_str, time_from_now)
     
